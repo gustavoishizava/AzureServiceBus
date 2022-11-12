@@ -56,7 +56,9 @@ namespace WebApiSender.Workers
             var message = new ServiceBusMessage(JsonSerializer.Serialize(client));
 
             var subject = "created";
-            if (client.Name.Length % 2 == 0)
+            if (client.Name.Length > 13)
+                subject = "deleted";
+            else if (client.Name.Length % 2 == 0)
                 subject = "updated";
 
             message.Subject = subject;

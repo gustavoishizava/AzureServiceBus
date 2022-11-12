@@ -16,6 +16,7 @@ builder.Services.AddSingleton(new ServiceBusClient(builder.Configuration.GetConn
 
 builder.Services.AddHostedService<ConsumerCreatedWorker>();
 builder.Services.AddHostedService<ConsumerUpdatedWorker>();
+builder.Services.AddHostedService<ConsumerDeletedWorker>();
 
 var app = builder.Build();
 

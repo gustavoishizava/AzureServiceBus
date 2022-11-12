@@ -10,7 +10,7 @@ namespace WebApiConsumer.Workers
         private readonly ILogger<ConsumerCreatedWorker> _logger;
         private readonly ServiceBusAdministrationClient _serviceBusAdminClient;
         private readonly ServiceBusClient _serviceBusClient;
-        private ServiceBusProcessor? _serviceBusProcessor;
+        private ServiceBusProcessor _serviceBusProcessor;
         private readonly IConfiguration _configuration;
 
         private readonly string _topicName;
